@@ -54,6 +54,12 @@ const routes: Routes = [
         loadChildren: () => import('./pages/teacher-journal/teacher-journal.module').then(m => m.TeacherJournalModule)
     },
     {
+        path: 'teacher-dashboard',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./pages/teacher-dashboard/teacher-dashboard.module').then(m => m.TeacherDashboardModule)
+    },
+    {
         path: 'notification',
         pathMatch: 'full',
         canActivate: [AuthGuard],
