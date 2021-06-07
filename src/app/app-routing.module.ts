@@ -42,6 +42,18 @@ const routes: Routes = [
         loadChildren: () => import('./pages/student-progress-list/student-progress-list.module').then(m => m.StudentProgressListModule)
     },
     {
+        path: 'teacher-sh',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./pages/teacher-scheduler/teacher-scheduler.module').then(m => m.TeacherSchedulerModule)
+    },
+    {
+        path: 'teacher-journal',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./pages/teacher-journal/teacher-journal.module').then(m => m.TeacherJournalModule)
+    },
+    {
         path: 'notification',
         pathMatch: 'full',
         canActivate: [AuthGuard],
